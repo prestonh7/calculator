@@ -1,18 +1,31 @@
-let firstNumber = 0;
-let secondNumber = 0;
+let firstNumber = "2";
+let secondNumber = "5";
+let operator = "+";
 
-function add(a, b) {
-    return a += b;
+function operate() {
+    if(operator == "+") {
+        add();
+    } else if(operator == "-") {
+        subtract();
+    } else if(operator == "x") {
+        multiply();
+    } else if(operator == "/") {
+        divide();
+    }
 }
 
-function subtract(a, b) {
-    return a -= b;
+function add() {
+    return firstNumber = parseInt(firstNumber) + parseInt(secondNumber);
 }
 
-function multiply(a, b) {
-    return a *= b;
+function subtract() {
+    return firstNumber -= secondNumber;
 }
 
-function divide(a, b) {
-    return a /= b;
+function multiply() {
+    return firstNumber *= secondNumber;
+}
+
+function divide() {
+    return firstNumber /= secondNumber;
 }
