@@ -1,0 +1,26 @@
+body {
+    height: 100vh;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen {
+    min-height: 100px;
+    background-color: white;
+}
+
+.container {
+    padding: 3px;
+    background-color: grey;
+}
+
+.buttons {
+    display: grid;
+    justify-content: space-evenly;
+    width: 12rem;
+    height: 12rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1px;
+}
