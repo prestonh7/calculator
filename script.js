@@ -13,7 +13,13 @@ for(let button of buttons) {
 }
 
 function evalInput(id, dataType) {
-    
+    if(dataType == "operator" && operator == "") {
+        operator = id
+    } else if(dataType == "number" && operator == "") {
+        firstNumber = firstNumber + id;
+    } else if(dataType == "number" && operator != "") {
+        secondNumber = secondNumber + id;
+    }
 }
 
 function operate() {
@@ -28,18 +34,18 @@ function operate() {
     }
 }
 
-function add() {
-    return firstNumber = parseInt(firstNumber) + parseInt(secondNumber);
+function add(a, b) {
+    return a = parseInt(a) + parseInt(b);
 }
 
-function subtract() {
-    return firstNumber -= secondNumber;
+function subtract(a, b) {
+    return a -= b;
 }
 
-function multiply() {
-    return firstNumber *= secondNumber;
+function multiply(a, b) {
+    return a *= b;
 }
 
-function divide() {
-    return firstNumber /= secondNumber;
+function divide(a, b) {
+    return a /= b;
 }
