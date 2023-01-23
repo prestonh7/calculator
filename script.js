@@ -23,33 +23,52 @@ function evalInput(id, dataType) {
     } else if(dataType == "number" && operator != "") {
         secondNumber = secondNumber + id;
         screen.innerText = `${firstNumber} ${operator} ${secondNumber}`;
+    } else if(dataType == "equals") {
+        operate(firstNumber, secondNumber);
+    } else if(dataType == "clear") {
+        reset();
+        screen.innerText = ""
     }
 }
 
-function operate() {
+function operate(a, b) {
     if(operator == "+") {
-        add();
+        add(a, b);
     } else if(operator == "-") {
-        subtract();
+        subtract(a, b);
     } else if(operator == "x") {
-        multiply();
+        multiply(a, b);
     } else if(operator == "/") {
-        divide();
+        divide(a, b);
     }
 }
 
 function add(a, b) {
-    return a = parseInt(a) + parseInt(b);
+    a = parseInt(a) + parseInt(b);
+    screen.innerText = a;
+    reset();
 }
 
 function subtract(a, b) {
-    return a -= b;
+    a -= b;
+    screen.innerText = a;
+    reset();
 }
 
 function multiply(a, b) {
-    return a *= b;
+    a *= b;
+    screen.innerText = a;
+    reset();
 }
 
 function divide(a, b) {
-    return a /= b;
+    a /= b;
+    screen.innerText = a;
+    reset();
+}
+
+function reset() {
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
 }
