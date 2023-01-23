@@ -1,6 +1,20 @@
-let firstNumber = "2";
-let secondNumber = "5";
-let operator = "+";
+let firstNumber = "";
+let secondNumber = "";
+let operator = "";
+
+const buttons = document.querySelectorAll('.buttons');
+
+const buttonPressed = e => {
+    evalInput(e.target.id, e.target.getAttribute('data-type'));
+}
+
+for(let button of buttons) {
+    button.addEventListener('click', buttonPressed)
+}
+
+function evalInput(id, dataType) {
+    
+}
 
 function operate() {
     if(operator == "+") {
