@@ -3,6 +3,7 @@ let secondNumber = "";
 let operator = "";
 
 const buttons = document.querySelectorAll('.buttons');
+const screen = document.querySelector('.screen');
 
 const buttonPressed = e => {
     evalInput(e.target.id, e.target.getAttribute('data-type'));
@@ -15,10 +16,13 @@ for(let button of buttons) {
 function evalInput(id, dataType) {
     if(dataType == "operator" && operator == "") {
         operator = id
+        screen.innerText = `${firstNumber} ${operator} ${secondNumber}`;
     } else if(dataType == "number" && operator == "") {
         firstNumber = firstNumber + id;
+        screen.innerText = `${firstNumber} ${operator} ${secondNumber}`;
     } else if(dataType == "number" && operator != "") {
         secondNumber = secondNumber + id;
+        screen.innerText = `${firstNumber} ${operator} ${secondNumber}`;
     }
 }
 
